@@ -5,19 +5,21 @@ type Message = {
   content: string;
 };
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 export default function Chat() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Initial assistant greeting
   useEffect(() => {
     if (open && messages.length === 0) {
       setMessages([
         {
           role: "assistant",
-          content: "Hi! I can help explain my projects, skills, or experience.",
+          content:
+            "Hi! I can help explain my projects, skills, or experience.",
         },
       ]);
     }
@@ -36,7 +38,7 @@ export default function Chat() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/chat/", {
+      const res = await fetch(`${API_BASE_URL}/api/chat/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMessage.content }),
@@ -73,7 +75,10 @@ export default function Chat() {
         <div className="chat-box">
           <div className="chat-header">
             <strong>Sayhoon Lee</strong>
-            <button className="chat-close" onClick={() => setOpen(false)}>
+            <button
+              className="chat-close"
+              onClick={() => setOpen(false)}
+            >
               ✕
             </button>
           </div>

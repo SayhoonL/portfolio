@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 type Project = {
   id: number;
   title: string;
@@ -15,7 +17,7 @@ export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/projects/")
+    fetch(`${API_BASE_URL}/api/projects/`)
       .then((res) => res.json())
       .then((data) => setProjects(data))
       .catch((err) =>
@@ -33,7 +35,7 @@ export default function Projects() {
             {/* Image */}
             {project.image && (
               <img
-                src={`http://127.0.0.1:8000${project.image}`}
+                src={`${API_BASE_URL}${project.image}`}
                 alt={project.title}
                 className="project-image"
               />
