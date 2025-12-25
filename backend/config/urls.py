@@ -24,8 +24,8 @@ urlpatterns = [
     path("api/", include("portfolio.urls")),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
-    )
+# Serve media in ALL environments (OK for portfolio)
+urlpatterns += static(
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT
+)
