@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function EducationExperience() {
   const umichLogo = `${import.meta.env.VITE_API_BASE_URL}/media/projects/michlogo.png`;
 
