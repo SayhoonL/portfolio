@@ -288,9 +288,9 @@ body {
 
   background: linear-gradient(
     to top,
+    rgba(0, 0, 0, 0.98),
     rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.5)
   );
 
   opacity: 0;
