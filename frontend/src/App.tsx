@@ -10,11 +10,6 @@ import Chat from "./components/Chat";
 
 import "./styles/portfolio.css";
 
-/**
- * IMPORTANT:
- * Use simple, safe keys for sections.
- * Display labels are handled in Navbar.
- */
 type Section = "about" | "projects" | "experience" | "skills";
 
 export default function App() {

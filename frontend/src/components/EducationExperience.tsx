@@ -2,86 +2,86 @@ export default function EducationExperience() {
   const umichLogo = `${import.meta.env.VITE_API_BASE_URL}/media/projects/michlogo.png`;
 
   return (
-    <section className="section" id="education-experience">
-      <h2>EDUCATION & EXPERIENCE</h2>
-
-      {/* Education */}
-      <div className="experience-item">
-        <h3>Education</h3>
-
-        <div style={{ marginTop: "0.75rem" }}>
-          <p className="school-name-row">
+    <section className="mx-auto max-w-4xl px-6 py-16 -mt-8">
+      {/* Education Section */}
+      <div className="mb-12">
+        <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
+        
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all">
+          <div className="flex items-start gap-4 mb-4">
             <img
-              className="school-logo"
+              className="w-20 h-20 object-contain rounded-lg bg-white/20 p-2"
               src={umichLogo}
               alt="University of Michigan logo"
             />
-            <span>
-              <strong>University of Michigan</strong> · Ann Arbor, MI
-            </span>
-          </p>
-
-          <p>B.S. in Computer Science</p>
-          <p>
-            <em>Sep 2020 – Jan 2025</em>
-          </p>
+            <div className="flex-1">
+              <h4 className="text-lg font-bold text-white mb-1">
+                University of Michigan
+              </h4>
+              <p className="text-gray-300 mb-1">B.S. in Computer Science</p>
+              <p className="text-gray-400 text-sm">Ann Arbor, MI · Sep 2020 – Jan 2025</p>
+            </div>
+          </div>
+          
+          <ul className="space-y-2 text-gray-300 ml-4">
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Relevant coursework: Data Structures & Algorithms, Web Development, Databases</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Project-focused work in full-stack development (React, Django/Flask, SQL)</span>
+            </li>
+          </ul>
         </div>
-
-        <ul style={{ marginTop: "0.75rem" }}>
-          <li>
-            Relevant coursework: Data Structures & Algorithms, Web Development,
-            Databases
-          </li>
-          <li>
-            Project-focused work in full-stack development (React, Django/Flask,
-            SQL)
-          </li>
-        </ul>
       </div>
 
-      {/* Experience */}
-      <div className="experience-item" style={{ marginTop: "2rem" }}>
-        <h3>Experience</h3>
-
-        <div style={{ marginTop: "0.75rem" }}>
-          <p>
-            <strong>Software Engineering Consultant</strong> · Remote
-          </p>
-          <p>
-            <em>Jan 2025 – Present</em>
-          </p>
-          <ul>
-            <li>
-              Developed full-stack web applications using React, Node.js, and
-              MongoDB to automate business workflows.
+      {/* Experience Section */}
+      <div>
+        <h3 className="text-2xl font-bold text-white mb-6">Experience</h3>
+        
+        {/* Job 1 */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all mb-6">
+          <div className="mb-4">
+            <h4 className="text-lg font-bold text-white mb-1">
+              Software Engineering Consultant
+            </h4>
+            <p className="text-gray-400 text-sm">Remote · Jan 2025 – Present</p>
+          </div>
+          
+          <ul className="space-y-2 text-gray-300 ml-4">
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Developed full-stack web applications using React, Node.js, and MongoDB to automate business workflows.</span>
             </li>
-            <li>
-              Designed and implemented RESTful APIs and delivered deployments
-              using cloud and static hosting platforms.
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Designed and implemented RESTful APIs and delivered deployments using cloud and static hosting platforms.</span>
             </li>
           </ul>
         </div>
 
-        <div style={{ marginTop: "1.5rem" }}>
-          <p>
-            <strong>Technical Instructor</strong> · University of Michigan · Ann
-            Arbor, MI
-          </p>
-          <p>
-            <em>Sep 2022 – Sep 2024</em>
-          </p>
-          <ul>
-            <li>
-              Mentored students in web development fundamentals, backend design,
-              and deployment workflows.
+        {/* Job 2 */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all">
+          <div className="mb-4">
+            <h4 className="text-lg font-bold text-white mb-1">
+              Technical Instructor
+            </h4>
+            <p className="text-gray-400 text-sm">University of Michigan · Ann Arbor, MI · Sep 2022 – Sep 2024</p>
+          </div>
+          
+          <ul className="space-y-2 text-gray-300 ml-4">
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Mentored students in web development fundamentals, backend design, and deployment workflows.</span>
             </li>
-            <li>
-              Taught core CS topics including Data Structures, Algorithms, and
-              Object-Oriented Programming in C++.
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Taught core CS topics including Data Structures, Algorithms, and Object-Oriented Programming in C++.</span>
             </li>
-            <li>
-              Guided students through Git/GitHub collaboration and practical
-              debugging habits.
+            <li className="flex items-start gap-2">
+              <span className="text-yellow-400 mt-1">▸</span>
+              <span>Guided students through Git/GitHub collaboration and practical debugging habits.</span>
             </li>
           </ul>
         </div>

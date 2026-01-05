@@ -62,7 +62,6 @@ export default function Skills() {
   const hideTimeout = useRef<number | null>(null);
 
   const handleMouseEnter = (skill: Skill) => {
-    // Cancel pending hide
     if (hideTimeout.current) {
       clearTimeout(hideTimeout.current);
       hideTimeout.current = null;
@@ -71,46 +70,51 @@ export default function Skills() {
   };
 
   const handleMouseLeave = () => {
-    // Delay hiding by 3 seconds
     hideTimeout.current = window.setTimeout(() => {
       setActiveSkill(null);
     }, 1000);
   };
 
   return (
-    <section className="section">
+    <section className="mx-auto max-w-4xl px-6 py-16 -mt-8">
+      {/* Header */}
+      <div className="mb-12">
+        <h2 className="text-2xl font-bold text-white mb-6">Skills</h2>
+      </div>
 
       {/* Explanation box */}
       {activeSkill && (
         <div
           key={activeSkill.name}
-          className="skills-explanation show"
+          className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 mb-8 transition-all duration-300"
         >
-          <img
-            src={activeSkill.icon}
-            alt={activeSkill.name}
-            className="skills-explanation-icon"
-          />
-          <h3>{activeSkill.name}</h3>
-          <p>{activeSkill.description}</p>
+          <div className="flex items-center gap-4 mb-4">
+            <img
+              src={activeSkill.icon}
+              alt={activeSkill.name}
+              className="w-16 h-16 object-contain"
+            />
+            <h3 className="text-xl font-bold text-white">{activeSkill.name}</h3>
+          </div>
+          <p className="text-gray-300 leading-relaxed">{activeSkill.description}</p>
         </div>
       )}
 
       {/* Skills grid */}
       <div
-        className={`skills-grid ${activeSkill ? "shifted" : ""}`}
+        className="grid grid-cols-2 md:grid-cols-4 gap-6"
         onMouseLeave={handleMouseLeave}
       >
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className={`skill-card ${
-              activeSkill?.name === skill.name ? "active" : ""
+            className={`bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all cursor-pointer flex flex-col items-center gap-3 ${
+              activeSkill?.name === skill.name ? "ring-2 ring-yellow-400 scale-105" : ""
             }`}
             onMouseEnter={() => handleMouseEnter(skill)}
           >
-            <img src={skill.icon} alt={skill.name} />
-            <span>{skill.name}</span>
+            <img src={skill.icon} alt={skill.name} className="w-16 h-16 object-contain" />
+            <span className="text-white font-medium text-sm text-center">{skill.name}</span>
           </div>
         ))}
       </div>
