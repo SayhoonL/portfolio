@@ -1,68 +1,80 @@
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaRocket,
+  FaFileAlt,
+} from "react-icons/fa";
+
 export default function About() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-16">
+      {/* Main About Section - No background box */}
+      <div className="p-8 mb-8">
+        {/* Profile Section */}
+        <div className="flex flex-col items-center text-center gap-6 mb-8">
 
-      {/* Main card with glass effect */}
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-8 mb-8 border border-gray-100">
-        <div className="flex items-start gap-4 mb-6">
-          <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-full p-3 text-white text-xl">
-            💻
-          </div>
-          <div>
-            <p className="text-2xl mb-4">
-              Hi, I'm <span className="font-bold text-blue-600">Sayhoon Lee</span>
-            </p>
-            <p className="text-xl text-gray-700 font-semibold">
-              Full-Stack Software Engineer
-            </p>
-          </div>
-        </div>
+          {/* Name */}
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            <span className="block text-white">
+              Hi, I'm
+            </span>
 
-        <div className="flex items-start gap-4">
-          <div className="w-6 h-6 text-purple-500 mt-1 flex-shrink-0 text-xl">
-            📚
-          </div>
-          <p className="text-lg leading-relaxed text-gray-700">
-            I build scalable web applications using <span className="font-semibold text-blue-600">Django</span>, <span className="font-semibold text-blue-600">React</span>, <span className="font-semibold text-blue-600">JavaScript</span>, and <span className="font-semibold text-blue-600">TypeScript</span>. I focus on clean architecture, maintainable code, and practical solutions that scale well.
+            <span className="block bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">
+              Sayhoon Lee
+            </span>
+
+            <span className="block text-white text-2xl md:text-3xl font-semibold mt-2">
+              Web Developer
+            </span>
+          </h1>
+
+          {/* Tagline */}
+          <p className="mt-4 text-lg md:text-xl text-slate-300">
+            Building modern web applications.
           </p>
         </div>
-      </div>
 
-      {/* Tech stack pills */}
-      <div className="flex flex-wrap gap-3 mb-8">
-        {['Django', 'React', 'TypeScript', 'JavaScript', 'PostgreSQL', 'Docker'].map((tech) => (
-          <span
-            key={tech}
-            className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-shadow"
+        {/* Contact Buttons */}
+        <div className="flex flex-wrap gap-4 justify-center">
+          <a
+            href="https://github.com/SayhoonL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 px-6 py-3 bg-gray-800 text-white rounded-xl hover:bg-gray-700 transition-all shadow-lg hover:shadow-xl"
           >
-            {tech}
-          </span>
-        ))}
-      </div>
+            <FaGithub className="text-xl group-hover:scale-110 transition-transform" />
+            <span className="font-semibold">GitHub</span>
+          </a>
 
-      {/* Contact links */}
-      <div className="flex gap-4">
-        <a
-          href="#"
-          className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors shadow-lg"
-        >
-          <span className="text-xl">💼</span>
-          GitHub
-        </a>
-        <a
-          href="#"
-          className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
-        >
-          <span className="text-xl">🔗</span>
-          LinkedIn
-        </a>
-        <a
-          href="#"
-          className="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors shadow-lg"
-        >
-          <span className="text-xl">✉️</span>
-          Contact
-        </a>
+          <a
+            href="https://www.linkedin.com/in/sayhoon-lee-03ab43305/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-500 transition-all shadow-lg hover:shadow-xl"
+          >
+            <FaLinkedin className="text-xl group-hover:scale-110 transition-transform" />
+            <span className="font-semibold">LinkedIn</span>
+          </a>
+
+          <a
+            href="mailto:sayhoon77@gmail.com"
+            className="group flex items-center gap-3 px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-500 transition-all shadow-lg hover:shadow-xl"
+          >
+            <FaEnvelope className="text-xl group-hover:scale-110 transition-transform" />
+            <span className="font-semibold">Email</span>
+          </a>
+
+          <a
+            href="/SayhoonLeeResume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-500 transition-all shadow-lg hover:shadow-xl"
+          >
+            <FaFileAlt className="text-xl group-hover:scale-110 transition-transform" />
+            <span className="font-semibold">Resume</span>
+          </a>
+        </div>
       </div>
     </section>
   );
