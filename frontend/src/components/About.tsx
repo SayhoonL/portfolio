@@ -2,7 +2,6 @@ import {
   FaGithub,
   FaLinkedin,
   FaEnvelope,
-  FaRocket,
   FaFileAlt,
 } from "react-icons/fa";
 
