@@ -5,6 +5,7 @@ import {
   FaGithub,
   FaExternalLinkAlt,
 } from "react-icons/fa";
+import ProjectModal from "./ProjectModal";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const AUTO_PLAY_DELAY = 5000;
@@ -24,6 +25,7 @@ export default function FeaturedProjects() {
   const [index, setIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const intervalRef = useRef<number | null>(null);
   const progressRef = useRef<number | null>(null);
 
@@ -171,7 +173,7 @@ export default function FeaturedProjects() {
 
             {/* ACTION ICONS */}
             <div className="flex items-center gap-4 mb-8">
-              {project.github_url && (
+              {project.github_url ? (
                 <a
                   href={project.github_url}
                   target="_blank"
@@ -185,9 +187,22 @@ export default function FeaturedProjects() {
                 >
                   <FaGithub />
                 </a>
+              ) : (
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="
+                    p-3 rounded-lg
+                    bg-white/10
+                    hover:bg-white/20
+                    transition
+                  "
+                  title="View project details"
+                >
+                  <FaGithub />
+                </button>
               )}
 
-              {project.live_url && (
+              {project.live_url ? (
                 <a
                   href={project.live_url}
                   target="_blank"
@@ -201,6 +216,19 @@ export default function FeaturedProjects() {
                 >
                   <FaExternalLinkAlt />
                 </a>
+              ) : (
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="
+                    p-3 rounded-lg
+                    bg-white/10
+                    hover:bg-white/20
+                    transition
+                  "
+                  title="View project details"
+                >
+                  <FaExternalLinkAlt />
+                </button>
               )}
             </div>
 
@@ -248,6 +276,13 @@ export default function FeaturedProjects() {
           </div>
         </div>
       </div>
+
+      {/* PROJECT MODAL */}
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        projectTitle={project.title}
+      />
     </section>
   );
 }
