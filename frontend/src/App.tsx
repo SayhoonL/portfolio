@@ -14,7 +14,6 @@ type Section = "about" | "projects" | "experience" | "skills";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>("about");
-
   const isHeroCompact = activeSection !== "about";
   const shouldAnimate = activeSection !== "about";
 
