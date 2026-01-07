@@ -61,7 +61,7 @@ export default function FeaturedProjects() {
 
   // START AUTOPLAY
   const startAutoPlay = () => {
-    if (intervalRef.current || total <= 1) return;
+    if (intervalRef.current || total <= 1 || isModalOpen) return;
 
     setProgress(0);
 
@@ -100,6 +100,13 @@ export default function FeaturedProjects() {
     startAutoPlay();
     return stopAutoPlay;
   }, [total]);
+
+  // Stop autoplay when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      stopAutoPlay();
+    }
+  }, [isModalOpen]);
 
   if (!project) return null;
 
