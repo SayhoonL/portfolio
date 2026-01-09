@@ -29,10 +29,10 @@ export default function ProjectModal({ isOpen, onClose, projectTitle }: ProjectM
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-start justify-center bg-black/70 backdrop-blur-sm pt-4"
+      className="fixed inset-0 z-[9999] flex items-start justify-center bg-black/70 backdrop-blur-sm pt-0"
       onClick={handleBackdropClick}
     >
-      <div className="relative max-w-6xl w-full mx-4 max-h-[75vh] overflow-y-auto bg-gradient-to-br from-purple-900/95 to-pink-900/95 border border-white/20 rounded-2xl shadow-2xl">
+      <div className="relative max-w-6xl w-full mx-4 -mt-24 max-h-[75vh] overflow-y-auto bg-gradient-to-br from-purple-900/95 to-pink-900/95 border border-white/20 rounded-2xl shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
